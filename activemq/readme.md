@@ -12,4 +12,4 @@
 
 # Debug
 
--Djavax.net.debug=ssl
+	-Djavax.net.debug=ssl
