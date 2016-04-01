@@ -26,7 +26,8 @@ ACTIVEMQ_BASE=`cd "$ACTIVEMQ_BASE" && pwd`
 #export ACTIVEMQ_OPTS_MEMORY="-Xms256M -Xmx1G"
 #export ACTIVEMQ_OPTS="$ACTIVEMQ_OPTS_MEMORY -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties"
 
-export ACTIVEMQ_HOME=/Users/dejanb/workspace/oss/mq/activemq/assembly/target/apache-activemq-5.14.0-SNAPSHOT
+export ACTIVEMQ_HOME=/opt/activemq
 export ACTIVEMQ_BASE=$ACTIVEMQ_BASE
+export ACTIVEMQ_SSL_OPTS="-Djava.security.properties=$ACTIVEMQ_BASE/conf/java.security"
 
 ${ACTIVEMQ_HOME}/bin/activemq "$@"
