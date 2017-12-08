@@ -80,9 +80,12 @@
         </systemUsage>
 
         <sslContext>
-            <sslContext keyStore="file:${activemq.conf}/broker.ks"
-              keyStorePassword="activemq" trustStore="file:${activemq.conf}/client-1.ks"
-              trustStorePassword="activemq"/>
+            <sslContext
+                keyStore="file:${activemq.conf}/broker.ks"
+                keyStorePassword="activemq"
+                trustStore="file:${activemq.conf}/broker.ts"
+                trustStorePassword="activemq"
+            />
         </sslContext>       
 
         <!--
