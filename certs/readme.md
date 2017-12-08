@@ -21,7 +21,7 @@ First we need broker certificate
         mv newkey.pem broker.key.pem
         rm newreq.pem
 
-Now we can create broker keystore, by adding broker and CA certificates into in        
+Now we can create broker keystore, by adding broker and CA certificates into it. The CA certificate has the default alias "my certificate", given by the `CA.pl` helper script
   
         keytool -importkeystore -srckeystore broker.p12 -destkeystore broker.ks -srcstoretype pkcs12 -alias 'my certificate' -destalias broker
         keytool -import -file demoCA/cacert.pem -alias ca -trustcacerts -keystore broker.ks  
@@ -47,7 +47,9 @@ and client keystore, by adding client and CA certificates in it
 Now we can create broker and client trust stores, like
 
         keytool -import -file broker.cert.pem -alias broker -trustcacerts -keystore client-1.ts
-        keytool -import -file client-1.cert.pem -alias client-1 -trustcacerts -keystore broker.ts
+        keytool -import -file demoCA/cacert.pem -alias ca -trustcacerts -keystore broker.ts
+
+Note that the broker only has to trust the CA, so all the verifications will be done trhough the OCSP responder
 
 These keystores and truststores are used in ActiveMQ demo.
 
