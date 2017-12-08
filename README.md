@@ -10,4 +10,6 @@ It contains:
 # Useful information
 All passwords of certificates, keystores and truststores are `activemq`.
 
-If you encounter the error `java.security.cert.CertPathValidatorException: validity check failed` on the broker, check the expiration date of the certificates. For that, you can use `openssl x509 -noout -enddate -in <path to cert.pem>`
+If you encounter the error `java.security.cert.CertPathValidatorException: validity check failed` on the broker, check the expiration date of the certificates. For that, you can use `openssl x509 -noout -enddate -in <path to cert.pem>`.
+
+An example of a working set up can be seen [on the attached screencast](screencast.webm)
