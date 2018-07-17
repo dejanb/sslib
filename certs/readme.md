@@ -22,7 +22,7 @@ First we need broker certificate
         rm newreq.pem
 
 Now we can create broker keystore, by adding broker and CA certificates into it. The CA certificate has the default alias "my certificate", given by the `CA.pl` helper script.
-  
+
         keytool -importkeystore -srckeystore broker/broker.p12 -destkeystore broker/broker.ks -srcstoretype pkcs12 -deststoretype pkcs12 -alias 'my certificate' -destalias broker
         keytool -import -file demoCA/cacert.pem -alias ca -trustcacerts -keystore broker/broker.ks
 
@@ -39,7 +39,7 @@ Let's create a client certificate now
         mv newkey.pem client-1/client-1.key.pem
         rm newreq.pem
 
-and client keystore, by adding client and CA certificates in it        
+and client keystore, by adding client and CA certificates in it
 
         keytool -importkeystore -srckeystore client-1/client-1.p12 -destkeystore client-1/client-1.ks -srcstoretype pkcs12 -deststoretype pkcs12 -alias 'my certificate' -destalias client-1
         keytool -import -file demoCA/cacert.pem -alias ca -trustcacerts -keystore client-1/client-1.ks
@@ -54,18 +54,18 @@ Note that the broker only has to trust the CA, so all the verifications will be 
 These keystores and truststores are used in ActiveMQ demo.
 
 
-#OCSP 
+# OCSP
 
 To start an OCSP responder, run
 
-        openssl ocsp -port 2560 -text \        
+    openssl ocsp -port 2560 -text \
         -index demoCA/index.txt  -CA demoCA/cacert.pem \
         -rkey demoCA/private/cakey.pem \
         -rsigner demoCA/cacert.pem
 
 You can test the responder like
 
-        openssl ocsp -CAfile demoCA/cacert.pem \
+    openssl ocsp -CAfile demoCA/cacert.pem \
         -url http://127.0.0.1:2560 -resp_text \
-        -issuer demoCA/cacert.pem \      
+        -issuer demoCA/cacert.pem \
         -cert client-1.cert.pem
