@@ -10,6 +10,8 @@ To start a broker, execute
 
 	bin/activemq console
 
+To start it with the script on <installation_dir>/bin/activemq, provided with the official download of ActiveMQ, is necessary for the broker to use the OCSP responder that the option `ACTIVEMQ_SSL_OPTS="-Djava.security.properties=$ACTIVEMQ_CONF/java.security"` is set on <installation_dir>/bin/env.
+
 ## OCSP
 
 Run OCSP responder from the `certs` directory like

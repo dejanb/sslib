@@ -1,3 +1,3 @@
-V	190323125604Z		F698EB16BDE45EEF	unknown	/C=US/ST=California/O=Demo CA/OU=ActiveMQ/CN=activemq.apache.org/emailAddress=activemq@example.com
-V	170323130832Z		F698EB16BDE45EF0	unknown	/C=US/ST=California/O=Demo CA/OU=ActiveMQ/CN=broker
-V	170323131845Z		F698EB16BDE45EF1	unknown	/C=US/ST=California/O=Demo CA/OU=activemq/CN=client-1/emailAddress=client-1@example.com
+V	21171114205545Z		D7455D88CE0EBB0D	unknown	/C=AA/ST=Example State/O=CA Company/CN=example.com/emailAddress=CA@example.com
+V	271206210849Z		D7455D88CE0EBB0F	unknown	/C=AA/O=Broker Company/CN=broker.example/emailAddress=broker@broker.example
+V	271206211359Z		D7455D88CE0EBB10	unknown	/C=AA/O=Client - 1 Company/CN=client-1.company/emailAddress=client-1@client-1.company
